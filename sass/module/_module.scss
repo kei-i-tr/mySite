@@ -1,0 +1,2956 @@
+a{
+  transition: opacity 0.2s ease-in-out;
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+// header
+#globalHeader{
+  background: $white;
+  .globalHeaderInner{
+    position: relative;
+    display: flex;
+    max-width: 1360px;
+    height: 85px;
+    padding: 0 24px;
+    background: $white;
+    margin: 0 auto;
+  }
+  .headerLogo{
+    width: 25%;
+    height: 42px;
+    max-width: 320px;
+    padding-right: 15px;
+    margin: auto 0;
+  }
+
+  .headerMenu{
+    display: flex;
+    width: 100%;
+    &Nav{
+      display: flex;
+      height: 16px;
+      margin: auto 0;
+      .navItem{
+        & + .navItem{
+          margin-left: 16px;
+        }
+        a{
+          font-size: 14px;
+          font-size: 1.4rem;
+          font-weight: 600;
+          word-break: keep-all;
+        }
+        ul{
+          display: none;
+        }
+      }
+      .active{
+        a{
+          position: relative;
+          color: $orange;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: $orange;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  
+    &Btns{
+      display: flex;
+      height: 36px;
+      margin: auto 0 auto auto;
+      .btn{
+        display: inline-block;
+        color: $white;
+        font-size: 15px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 37px;
+        padding: 0 20px;
+        background: $deep-blue;
+        border-radius: 18.5px;
+        &.orange{
+          background: $orange;
+        }
+        & + .btn{
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .drawerBtn{
+    display: none;
+  }
+  .shade{
+    display: none;
+  }
+
+  @include mq-md {
+    .globalHeaderInner{
+      position: relative;
+      height: 60px;
+      padding: 0;
+      z-index: 3;
+    }
+    .headerLogo{
+      width: 200px;
+      height: 30px;
+      margin: auto auto auto 15px;
+    }
+    .headerMenu{
+      position: absolute;
+      top: 60px;
+      display: block;
+      height: 0;
+      background: $white;
+      border-top: solid 1px $deep-blue;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      &Nav{
+        display: block;
+        height: auto;
+        .navItem{
+          background-color: #ffffff;
+          border-bottom: dotted 1px $deep-blue;
+          margin: 0;
+          & + .navItem{
+            margin: 0;
+          }
+          a{
+            display: block;
+            font-size: 15px;
+            font-size: 1.5rem;
+            padding: 15px;
+            background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+            background-size: 14px;
+            background-position: right 15px center;
+            background-repeat: no-repeat;
+          }
+          &.haschild{
+            > a{
+              position: relative;
+              &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 15px;
+                bottom: 0;
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-color: $deep-blue;
+                background-image: linear-gradient(0deg, $white, $white), linear-gradient(0deg, $white, $white);
+                background-size: 7px 1px, 1px 7px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                margin: auto;
+                transition: all 0.2s ease-in-out;
+              }
+            }
+            ul{
+              display: none;
+              background: $voice-middle-blue;
+              li{
+                border-top: dotted 1px $deep-blue;
+                a{
+                  padding-left: 35px;
+                }
+              }
+            }
+            &.open{
+              background-color: $middle-blue;
+              > a{
+                color: $white;
+                &::after{
+                  background-size: 7px 1px, 7px 1px;
+                }
+              }
+            }
+          }
+        }
+        .active{
+          a{
+            &::after{
+              display: none;
+            }
+          }
+        }
+      }
+      &Btns{
+        display: block;
+        height: auto;
+        padding: 25px 15px;
+        .btn{
+          display: block;
+          max-width: 300px;
+          line-height: 44px;
+          text-align: center;
+          border-radius: 22px;
+          margin: 0 auto;
+          &.orange{
+            font-size: 20px;
+            font-size: 2rem;
+            line-height: 60px;
+            border-radius: 30px;
+          }
+          & + .btn{
+            margin: 15px auto 0;
+          }
+        }
+      }
+    }
+    .drawerBtn{
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background: $deep-blue;
+      cursor: pointer;
+      .drawerBtnBar{
+        position: absolute;
+        right: 0;
+        left: 0;
+        width: 32px;
+        height: 4px;
+        background: $white;
+        border-radius: 4px;
+        margin: auto;
+        transition: all 0.3s ease-in-out;
+        &.top{
+          top: 15px;
+        }
+        &.middle{
+          top: 0;
+          bottom: 0;
+        }
+        &.bottom{
+          bottom: 15px;
+        }
+      }
+    }
+    .shade{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba($color: $black, $alpha: 0.4);
+      z-index: 2;
+    }
+    &.open{
+      .headerMenu{
+        height: auto;
+      }
+      .drawerBtn{
+        .drawerBtnBar{
+          position: absolute;
+          right: 0;
+          left: 0;
+          width: 32px;
+          height: 4px;
+          background: $white;
+          border-radius: 4px;
+          margin: auto;
+          &.top{
+            top: 28px;
+            transform: rotate(45deg);
+          }
+          &.middle{
+            opacity: 0;
+          }
+          &.bottom{
+            bottom: 28px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      .shade{
+        display: block;
+      }
+    }
+  }
+  @include mq {
+    .headerLogo{
+      width: 173px;
+      height: auto;
+      padding: 0;
+    }
+  }
+}
+
+
+// #mainVisual
+#mainVisual{
+  background: $middle-blue;
+  .slider{
+    .slick-dots{
+      bottom: 20px;
+      li{
+        width: 12px;
+        height: 12px;
+        margin: 0 15px;
+        button{
+          width: 100%;
+          height: 100%;
+          background: $white-blue;
+          border-radius: 50%;
+          &::before{
+            display: none;
+          }
+        }
+        &.slick-active{
+          button{
+            background: $orange;
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    overflow: hidden;
+    .slider{
+      .slick-dots{
+        li{
+          width: 20px;
+          height: 20px;
+          margin: 0 25px;
+        }
+      }
+    }
+  }
+}
+
+
+// cardList
+.cardList{
+  display: flex;
+  margin: 0 -16px;
+  .col{
+    width: 33.3333%;
+    padding: 0 16px;
+    .card{
+      position: relative;
+      height: 100%;
+      padding: 30px;
+      background: $white;
+      box-shadow: 0 0 14px rgba($color: $black-02, $alpha: 0.2);
+      &Number{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &Heading{
+        color: $deep-blue;
+        font-size: 24px;
+        font-size:2.4rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        line-height: 158%;
+        text-align: center;
+        margin: 0 0 16px;
+        .orange{
+          color: $orange;
+        }
+      }
+      &Img{
+        width: 100%;
+        margin: 0 0 24px;
+        &.modal{
+          position: relative;
+          .modalBtn{
+            position: relative;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 35px;
+            height: 35px;
+            background-color: $deep-blue;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+              opacity: 0.7;
+            }
+            &::before, &::after{
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 17px;
+              height: 2px;
+              background: $white;
+              margin: auto;
+            }
+            &::after{
+              width: 2px;
+              height: 17px;
+            }
+          }
+          .modalBlock{
+            position: relative;
+            display: none;
+            z-index: 3;
+          }
+          .modalWindow{
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            .modalContent{
+              position: relative;
+              width: 90%;
+              height: auto;
+              max-width: 1200px;
+              max-height: 90%;
+              padding: 0;
+              background: $white;
+              margin: auto;
+              z-index: 5;
+              overflow: scroll;
+              overflow-x: visible;
+              -ms-overflow-style:none;
+              &Inner{
+                width: 100%;
+                height: 100%;
+              }
+              .closeBtn{
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                background: $deep-blue;
+                cursor: pointer;
+                &::before, &::after{
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  width: 20px;
+                  height: 2px;
+                  background: $white;
+                  margin: auto;
+                  transform: rotate(45deg);
+                }
+                &::after{
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+            @media all and (-ms-high-contrast: none){
+              .modalContent{
+                top: 10%;
+              }
+            }
+            .shade{
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background: rgba($color: $black, $alpha: 0.5);
+              z-index: 4;
+            }
+          }
+        }
+      }
+      p{
+        color: $deep-blue;
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 156%;
+      }
+    }
+  }
+  @include mq {
+    flex-wrap: wrap;
+    margin: 0;
+    .col{
+      width: 100%;
+      max-width: 400px;
+      padding: 0;
+      margin: 0 auto;
+      .card{
+        &Number{
+          top: -28px;
+          left: -6px;
+          img{
+            width: 80px;
+          }
+        }
+        &Img{
+          img{
+            display: block;
+            margin: 0 auto;
+          }
+          &.modal{
+            .modalBtn{
+              display: none;
+            }
+          }
+        }
+        p{
+          font-size: 15px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// #about
+#about{
+  background-image: url(/static/assets/image/static/pro/product/index/index_bg_about_pattern.png),
+  url(/static/assets/image/static/pro/product/index/index_bg_about_slanting.png);
+  background-size: 100% auto;
+  background-position: center bottom, center 400px;
+  background-repeat: no-repeat;
+  .point{
+    margin: 0 0 60px;
+    .cardList{
+      .col{
+        .card{
+          height: auto;
+          &.second{
+            margin-top: 50px;
+          }
+          &.third{
+            margin-top: 100px;
+          }
+          &Number{
+            top: -40px;
+            left: -10px;
+          }
+          &Heading{
+            font-size: 22px;
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+          }
+          &Img{
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    background-size: 100% auto, auto 100%;
+    .point{
+      .cardList{
+        .col{
+          .card{
+            padding: 30px 20px;
+            margin: 0;
+            &.second{
+              margin: 40px 0 0;
+            }
+            &.third{
+              margin: 40px 0 0;
+            }
+            &Number{
+              top: -20px;
+              left: -7px;
+            }
+            &Heading{
+              position: relative;
+              font-size: 20px;
+              font-size: 2rem;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.movie{
+  text-align: center;
+  &Label{
+    position: relative;
+    display: inline-block;
+    color: $white;
+    font-size: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    padding: 17px 16px;
+    background: #ccc;
+    background: linear-gradient(45deg, $orange 0%, $orange-grad-01 50%, $orange-grad-02 100%);
+    margin: 0 0 20px;
+    &::after{
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      width: 16px;
+      height: 10px;
+      border-top: solid 10px $orange-grad-01;
+      border-right: solid 8px transparent;
+      border-left: solid 8px transparent;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    .sp{
+      display: none;
+    }
+  }
+  &Box{
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    line-height: 0;
+    margin: 0 auto;
+    box-shadow: 0 0 14px rgba(0,0,0,0.2);
+    .playBtn{
+      cursor: pointer;
+      img{
+        margin: 0 !important;
+      }
+    }
+    .playWindow{
+      display: none;
+      .windowInner{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        width: 90%;
+        height: 100%;
+        max-width: 1200px;
+        margin: auto;
+        z-index: 3;
+        .youtube{
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%;
+          margin: auto;
+          z-index: 5;
+          iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .shade{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba($color: $black, $alpha: 0.5);
+          z-index: 4;
+        }
+        .closeBtn{
+          position: fixed;
+          top: 25px;
+          right: 25px;
+          width: 50px;
+          height: 50px;
+          background: $white;
+          border-radius: 50%;
+          z-index: 5;
+          cursor: pointer;
+          &::before, &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background: $deep-blue;
+            margin: auto;
+            transform: rotate(45deg);
+          }
+          &::after{
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+  &Frame{
+    width: 100%;
+    max-width: 560px;
+    margin: 20px auto;
+    &Guide{
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  @include mq {
+    &Label{
+      .sp{
+        display: block;
+      }
+    }
+  }
+}
+
+// #case
+#case, #scene{
+  .cardList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px 60px;
+    .col{
+      width: 33.3333%;
+      padding: 0 16px;
+      .card{
+        position: relative;
+        padding: 30px;
+        background: $white;
+        box-shadow: 0 0 14px rgba($color: $black-02, $alpha: 0.2);
+        overflow: hidden;
+        &Number{
+          position: absolute;
+          top: 0;
+          left: 0;
+          img{
+            width: 50px;
+          }
+        }
+        &Heading{
+          .orange{
+            color: $orange;
+          }
+        }
+        &Img{
+          width: 100%;
+          margin: 0 0 48px;
+        }
+        .proposal{
+          position: relative;
+          padding: 30px 30px 500px;
+          background: rgba($color: $middle-blue, $alpha: 0.1);
+          margin: 0 -30px -500px;
+          &::before{
+            content: '';
+            position: absolute;
+            top: -16px;
+            right: 0;
+            left: 0;
+            width: 90px;
+            height: 36px;
+            border-top: solid 36px $middle-blue;
+            border-right: solid 45px transparent;
+            border-left: solid 45px transparent;
+            margin: auto;
+            box-sizing: border-box;
+          }
+          &Lavel{
+            position: relative;
+            display: block;
+            max-width: 120px;
+            color: $white;
+            font-size: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px 0;
+            background: linear-gradient(45deg, $orange 0%, $orange-grad-01 50%, $orange-grad-02 100%);
+            background: $green;
+            margin: 24px 0 16px;
+            &::after{
+              content: '';
+              position: absolute;
+              display: inline-block;
+              bottom: -6px;
+              left: 0;
+              right: 0;
+              width: 10px;
+              height: 6px;
+              border-top: solid 6px $green;
+              border-right: solid 5px transparent;
+              border-left: solid 5px transparent;
+              margin: auto;
+              box-sizing: border-box;
+            }
+          }
+          &List{
+            li{
+              width: 100%;
+              padding-left: 22px;
+              background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+              background-position: left center;
+              background-repeat: no-repeat;
+              & + li{
+                margin: 8px 0 0;
+              }
+              a{
+                font-size: 18px;
+                font-size: 1.8rem;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  p.center{
+    text-align: center;
+  }
+  a.btn{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 340px;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 50px;
+    border: solid 2px $deep-blue;
+    border-radius: 25px;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 20px;
+      bottom: 0;
+      width: 6px;
+      height: 6px;
+      border-top: solid 2px $deep-blue;
+      border-right: solid 2px $deep-blue;
+      margin: auto;
+      transform: rotate(45deg);
+    }
+  }
+  @include mq-md {
+    .cardList{
+      margin: 0 -10px 60px;
+      .col{
+        padding: 0 10px;
+        .card{
+          padding: 60px 15px 25px;
+          p{
+            font-size: 14px;
+            font-size: 1.4rem;
+          }
+          &Heading{
+            font-size: 20px;
+            font-size: 2.0rem;
+            word-break: keep-all;
+          }
+          &Img{
+            margin: 0 0 30px;
+          }
+          .proposal{
+            padding: 35px 15px 500px;
+            margin: 0 -15px -500px;
+            &List{
+              li{
+                padding-left: 15px;
+                background-size: 12px;
+                a{
+                  font-size: 13px;
+                  font-size: 1.3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    .cardList{
+      display: block;
+      margin: 0;
+      .col{
+        width: 100%;
+        max-width: 345px;
+        padding: 0;
+        margin: 0 auto 30px;
+        .card{
+          padding: 30px 20px;
+          &Heading{
+            font-size: 20px;
+            font-size: 2rem;
+          }
+          &Img{
+            margin: 0 0 25px;
+          }
+          .proposal{
+            padding: 30px 20px;
+            margin: 0 -20px -30px;
+            &List{
+              li{
+                margin: 20px 0 0;
+                & + li{
+                  margin: 20px 0 0;
+                }
+                a{
+                  display: block;
+                  font-size: 15px;
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        } 
+      }
+    }
+    a.btn{
+      max-width: 300px;
+      font-size: 15px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+//scene
+#scene{
+  .ttlArea{
+    text-align: center;
+    .ttl{
+      color: $deep-blue;
+      font-size: 38px;
+      font-size: 3.8rem;
+      font-weight: 600;
+      margin: 0 0 20px;
+      line-height: 56px;
+      .underline{
+        border-bottom: 2px $deep-blue solid;
+      }
+    }  
+  }
+  .cardList{
+    .col{
+      margin: 0 0 30px;
+      .card{
+        padding-top: 25px;
+      }
+    }
+  }
+  .orange{
+    color: $orange;
+  }
+  .proposal{
+    &List{
+      margin: 16px 0 0 0;
+    }
+  }
+  @include mq {
+  .ttlArea{
+    .ttl{
+      font-size: 24px;
+      font-size: 2.4rem;
+      line-height: 150%;
+      .sp{
+        display: none;
+      }
+    }
+  }  
+  .cardList{
+     .col{
+       margin: 0 auto 30px;
+     }
+   }
+  }
+}
+
+#sceneHead{
+  padding-bottom: 70px;
+  .layoutInner{
+    max-width: 928px;
+    > *:first-child{
+      margin-top: 0;
+    }
+  }
+  .sectionHeader{
+    margin: 0 0 30px;
+    &Ttl{
+      font-size: 37px;
+      font-size: 3.7rem;
+    }
+  }
+  p{
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 168%;
+    text-align: center;
+    margin: 30px 0 0;
+  }
+  img{
+    margin: 30px 0 0;
+  }
+  b{
+    font-weight: 600;
+  }
+  .itemList{
+    ul{
+      display: flex;
+      margin: 20px -10px;
+      li{
+        width: 50%;
+        min-height: 110px;
+        padding: 0 10px;
+        margin: 0 auto;
+        .item{
+          display: flex;
+          height: 100%;
+          color: $deep-blue;
+          font-size: 18px;
+          font-size: 1.8rem;
+          font-weight: 600;
+          line-height: 150%;
+          padding: 15px 20px 15px 70px;
+          background-image: url(/static/assets/image/static/pro/product/scene/scene_ico_search_boxcheck.jpg);
+          background-position: left 25px center;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 14px rgba($color: $black-02, $alpha: 0.2);
+          span{
+            margin: auto 0;
+          }
+          @media all and (-ms-high-contrast: none){
+            span{
+              height: 54px;
+              &.single{
+                height: 27px;
+              }
+            }
+          }
+          .orange{
+            color: $orange;
+          }
+        }
+      }
+    }
+    &.wrap{
+      ul{
+        flex-wrap: wrap;
+        margin-bottom: -20px;
+        li{
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  @include mq{
+    .sectionHeader{
+      &Ttl{
+        font-size: 24px;
+        font-size: 2.4rem;
+      }
+    }
+    p{
+      font-size: 15px;
+      font-size: 1.5rem;
+      margin: 20px 0 0;
+    }
+    .itemList{
+      ul{
+        flex-wrap: wrap;
+        li{
+          width: 100%;
+          min-height: 80px;
+          .item{
+            font-size: 16px;
+            font-size: 1.6rem;
+            padding: 15px 15px 15px 50px;
+            background-position: left 15px center;
+          }
+        }
+      }
+    }
+  }
+}
+
+#sceneBody{
+  position: relative;
+  padding: 80px 0 0;
+  background: $scene-body;
+  &::before{
+    content: '';
+    position: absolute;
+    top: -24px;
+    right: 0;
+    left: 0;
+    width: 90px;
+    height: 36px;
+    border-top: solid 48px $middle-blue;
+    border-right: solid 60px transparent;
+    border-left: solid 60px transparent;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .orange{
+    color: $orange;
+  }
+  .underline{
+    text-decoration: underline;
+  }
+  .sceneArticle{
+    max-width: 880px;
+    padding: 0 0 70px;
+    margin: 0 auto;
+    p{
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 168%;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .ttl{
+      color: $deep-blue;
+      font-size: 24px;
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 135%;
+      text-align: center;
+      margin: 35px 0 0;
+    }
+    img{
+      display: block;
+      margin: 20px auto;
+    }
+    .arrow{
+      display: inline-block;
+      width: 54px;
+      height: 22px;
+      border-top: solid 22px $deep-blue;
+      border-right: solid 27px transparent;
+      border-left: solid 27px transparent;
+    }
+    .movie{
+      p{
+        font-size: 18px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        &.blue{
+          color: $deep-blue;
+        }
+      }
+      &Label{
+        font-size: 24px;
+        font-size: 2.4rem;
+      }
+    }
+  }
+  .sceneComment{
+    padding: 40px 25px;
+    background-color: $white;
+    &Inner{
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    p{
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 150%;
+      text-align: center;
+    }
+    .ttl{
+      color: $deep-blue;
+      font-size: 23px;
+      font-size: 2.3rem;
+      font-weight: 600;
+      line-height: 180%;
+      text-align: center;
+    }
+  }
+  @include mq{
+    padding: 40px 0 0;
+    .sceneArticle{
+      p{
+        font-size: 15px;
+        font-size: 1.5rem;
+      }
+      .ttl{
+        font-size: 18px;
+        font-size: 1.8rem;
+      }
+      .movie{
+        p{
+          font-size: 15px;
+          font-size: 1.5rem;
+        }
+        &Label{
+          font-size: 15px;
+          font-size: 1.5rem;
+          margin: 0;
+        }
+      }
+    }
+    .sceneComment{
+      padding: 30px 15px;
+      .ttl{
+        font-size: 18px;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+#relatedFunctions{
+  background-image: url(/static/assets/image/static/pro/product/scene/scene_bg_relatedFunctions.jpg),
+  linear-gradient(135deg, $scene-grad-01, $scene-grad-02);
+  background-size: 100% auto, 100% 100%;
+  background-position: center bottom, center;
+  background-repeat: no-repeat;
+  .sectionHeaderIcon{
+    margin-bottom: 0!important;
+  }
+  .functionList{
+    display: flex;
+    margin: 32px auto 0;
+    li{
+      width: 33.333%;
+      padding: 0 10px;
+      margin: 0 auto 20px;
+      a{
+        display: flex;
+        align-items: center;
+        height: 80px;
+        color: $deep-blue;
+        font-size: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        line-height: 24px;
+        padding: 10px 40px 10px 25px;
+        background-color: $white;
+        background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+        background-position: right 20px center;
+        background-repeat: no-repeat;
+        img{
+          vertical-align: middle;
+          margin-right: 15px;
+        }
+        small{
+          font-size: 16px;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  } 
+  @include mq{
+    .functionList{
+      flex-wrap: wrap;
+      li{
+        width: 100%;
+        a{
+          height: auto;
+          font-size: 16px;
+          font-size: 1.6rem;
+          padding: 15px 35px 15px 15px;
+          background-position: right 13px center;
+          img{
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#sceneHead.sceneSearchHead{
+  padding-bottom: 60px;
+  .itemList{
+    padding-top: 170px;
+    margin-top: -170px;
+    background-image: url(/static/assets/image/static/pro/product/scene/scene_bg_search_person.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+  @include mq {
+    .itemList{
+      background: none;
+    }
+  }
+}
+
+#sceneBody.sceneSearchBody{
+  padding: 20px 0 0;
+  background-color: $white;
+  background-image: url(/static/assets/image/static/pro/product/scene/scene_bg_search_body_pattern.png), url(/static/assets/image/static/pro/product/scene/scene_bg_search_body_slanting.png);
+  background-size: 100% auto;
+  background-position: center bottom, center 400px;
+  background-repeat: no-repeat;
+  .sceneArticle{
+    .ttl{
+      font-size: 27px;
+      font-size: 2.7rem;
+      .large{
+        font-size: 38px;
+        font-size: 3.8rem;
+      }
+    }
+    .cardList{
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 680px;
+      margin: 30px auto 60px;
+      .col{
+        width: 100%;
+        padding: 0;
+        & + .col{
+          margin-top: 20px;
+        }
+        .card{
+          position: relative;
+          padding: 0;
+          background: $white;
+          box-shadow: 0 0 14px rgba($color: $black-02, $alpha: 0.2);
+          &Number{
+            position: absolute;
+            top: 0;
+            left: 0;
+            img{
+              width: 50px;
+              margin: 0;
+            }
+          }
+          &Heading{
+            text-align: left;
+            padding: 20px 20px 20px 70px;
+            margin: 0;
+            .orange{
+              color: $orange;
+            }
+          }
+          &Img{
+            width: 100%;
+            margin: 0 0 48px;
+          }
+          .proposal{
+            position: relative;
+            padding: 20px;
+            background: rgba($color: $middle-blue, $alpha: 0.1);
+            margin: 0;
+            &Lavel{
+              position: relative;
+              display: inline-block;
+              vertical-align: middle;
+              max-width: 120px;
+              color: $white;
+              font-size: 12px;
+              font-size: 1.2rem;
+              font-weight: 600;
+              text-align: center;
+              padding: 8px;
+              background: linear-gradient(45deg, $orange 0%, $orange-grad-01 50%, $orange-grad-02 100%);
+              background: $green;
+              margin: 0;
+              &::after{
+                content: '';
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                bottom: 0;
+                right: -6px;
+                width: 6px;
+                height: 10px;
+                border-left: solid 6px $green;
+                border-top: solid 5px transparent;
+                border-bottom: solid 5px transparent;
+                margin: auto;
+                box-sizing: border-box;
+              }
+              &.deepGreen{
+                background: $deep-green;
+                &::after{
+                  border-left-color: $deep-green;
+                }
+              }
+            }
+            &List{
+              display: inline-flex;
+              vertical-align: middle;
+              padding-left: 15px;
+              li{
+                padding-left: 22px;
+                background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+                background-position: left top;
+                background-repeat: no-repeat;
+                & + li{
+                  margin-left: 20px;
+                }
+                a{
+                  font-size: 18px;
+                  font-size: 1.8rem;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    background-position: center bottom;
+    .sceneArticle{
+      .ttl{
+        font-size: 18px;
+        font-size: 1.8rem;
+        .large{
+          font-size: 26px;
+          font-size: 2.6rem;
+        }
+      }
+      .cardList{
+        margin: 30px auto 60px;
+        .col{
+          .card{
+            &Number{
+              width: 30px;
+            }
+            &Heading{
+              font-size: 18px;
+              font-size: 1.8rem;
+              padding: 20px 15px 20px 40px;
+            }
+            .proposal{
+              padding: 20px 15px;
+              &Lavel{
+                display: block;
+                margin: 0 0 15px;
+                &::after{
+                  display: none;
+                }
+              }
+              &List{
+                display: block;
+                padding: 0;
+                li{
+                  padding-left: 18px;
+                  background-size: 14px;
+                  background-position: left center;
+                  & + li{
+                    margin: 15px 0 0;
+                  }
+                  a{
+                    font-size: 15px;
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#sceneHead.sceneEarnHead{
+  @include mq {
+    padding: 40px 15px 60px;
+  }
+}
+
+#sceneBody.sceneEarnBody{
+  .layoutInner{
+    .sceneArticle{
+      max-width: none;
+      > *:first-child{
+        margin-top: 0;
+      }
+      .sceneMethod{
+        background: $white;
+        box-shadow: 0 0 14px rgba($color: $black-02, $alpha: 0.2);
+        margin: 60px 0;
+        &Ttl{
+          color: $deep-blue;
+          font-size: 24px;
+          font-size: 2.4rem;
+          font-weight: 600;
+          padding: 40px 15px;
+          margin: 0;
+          img{
+            display: inline-block;
+            vertical-align: sub;
+            margin: 0;
+          }
+          .large{
+            font-size: 38px;
+            font-size: 3.8rem;
+          }
+          .small{
+            font-size: 30px;
+            font-size: 3rem;
+          }
+        }
+        &Body{
+          padding: 60px;
+          background: $white-blue;
+          .methodCard{
+            position: relative;
+            padding: 30px 60px;
+            background: $white;
+            &Number{
+              position: absolute;
+              top: 0;
+              left: 0;
+              img{
+                margin: 0;
+              }
+            }
+            .ttl{
+              text-align: left;
+              padding: 0 20px;
+              margin: 0;
+            }
+            p{
+              &.right{
+                text-align: right;
+                margin: 0;
+                a{
+                  display: inline-block;
+                  font-weight: 600;
+                  text-decoration: underline;
+                  padding-left: 22px;
+                  background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+                  background-position: left center;
+                  background-repeat: no-repeat;
+                  .small{
+                    font-size: 14px;
+                    font-size: 1.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    .layoutInner{
+      .sceneArticle{
+        .sceneMethod{
+          margin: 40px 0;
+          &Ttl{
+            font-size: 16px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            padding: 30px 15px;
+            img{
+              height: 30px;
+            }
+            .large{
+              font-size: 24px;
+              font-size: 2.4rem;
+            }
+            .small{
+              font-size: 14px;
+              font-size: 1.4rem;
+            }
+          }
+          &Body{
+            padding: 20px 15px;
+            .methodCard{
+              padding: 20px;
+              &Number{
+                width: 30px;
+              }
+              p{
+                &.right{
+                  a{
+                    font-size: 12px;
+                    font-size: 1.2rem;
+                    .small{
+                      font-size: 10px;
+                      font-size: 1rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// #function
+#function{
+  background-image: url(/static/assets/image/static/pro/product/index/index_bg_function_pattern.jpg),
+  linear-gradient(135deg, $blue-grad-01 , $blue-grad-02);
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  .functionList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    li{
+      width: 33.3333%;
+      padding: 0 10px;
+      margin: 0 0 20px;
+      a{
+        display: flex;
+        align-items: center;
+        height: 80px;
+        color: $deep-blue;
+        font-size: 20px;
+        font-size: 2.0rem;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        line-height: 24px;
+        padding: 10px 40px 10px 25px;
+        background-color: $white;
+        background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+        background-position: right 20px center;
+        background-repeat: no-repeat;
+        img{
+          vertical-align: middle;
+          margin-right: 15px;
+        }
+        small{
+          font-size: 16px;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  @include mq {
+    .functionList{
+      padding: 0 20px;
+      margin: 0;
+      li{
+        width: 100%;
+        padding: 0;
+        margin: 0 0 7px;
+        a{
+          height: 50px;
+          font-size: 15px;
+          font-size: 1.5rem;
+          line-height: 15px;
+          padding: 10px 40px 10px 20px;
+          background-size: 12px;
+          img{
+            width: 20px;
+            margin-right: 10px;
+          }
+          small{
+            font-size: 12px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#merit{
+  background-image: url(/static/assets/image/static/pro/product/index/index_bg_merit.jpg);
+  background-size: cover;
+  .meritList{
+    display: flex;
+    margin: 0 0 60px;
+    li{
+      width: 25%;
+      padding: 0 10px;
+      dl{
+        height: 100%;
+        color: $deep-blue;
+        font-weight: 600;
+        text-align: center;
+        padding: 25px 10px;
+        background: $white;
+        dt{
+          display: flex;
+          justify-content: center;
+          font-size: 20px;
+          font-size: 2rem;
+          margin: 0 0 20px;
+          &::before{
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url(/static/assets/image/static/pro/product/index/index_ico_merit_list_checkjpg.jpg);
+            margin-right: 5px;
+          }
+        }
+        dd{
+          font-size: 24px;
+          font-size: 2.4rem;
+          letter-spacing: 0.02em;
+          .orange{
+            color: $orange;
+          }
+          .large{
+            font-size: 38px;
+            font-size: 3.8rem;
+          }
+        }
+      }
+    }
+  }
+  .introduce{
+    &Ttl{
+      color: $deep-blue;
+      font-size: 24px;
+      font-size: 2.4rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 30px;
+      .sp{
+        display: none;
+      }
+    }
+    &List{
+      text-align: center;
+      background: $white;
+    }
+    &Caution{
+      color: $deep-blue;
+      font-size: 10px;
+      font-size: 1rem;
+      text-align: right;
+      margin: 8px 0 0;
+    }
+  }
+  @include mq {
+    .meritList{
+      flex-wrap: wrap;
+      margin: 0 -6px 20px;
+      li{
+        width: 50%;
+        padding: 0 6px;
+        margin: 0 0 12px;
+        dl{
+          dt{
+            font-size: 15px;
+            font-size: 1.5rem;
+          }
+          dd{
+            font-size: 15px;
+            font-size: 1.5rem;
+            .large{
+              font-size: 25px;
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+    .introduce{
+      &Ttl{
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 28px;
+        .sp{
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+//#market
+#market{
+  .marketList{
+    color: $deep-blue;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  @include mq {
+    .marketList{
+      font-size: 18px;
+      font-size: 1.8rem;
+      line-height: 32px;
+    }
+  }
+}
+
+// #flow
+#flow{
+  background: $white-blue;
+  .cardList{
+    .col{
+      .card{
+        height: 100%;
+        padding: 40px 30px 25px;
+        &::after{
+          content: '';
+          position: absolute;
+          right: -15px;
+          top: 0;
+          bottom: 0;
+          display: block;
+          width: 22px;
+          height: 44px;
+          border-left: solid 22px $middle-blue;
+          border-top: solid 22px transparent;
+          border-bottom: solid 22px transparent;
+          box-sizing: border-box;
+          margin: auto;
+        }
+      }
+      &:last-child{
+        .card{
+          &::after{
+            display: none;
+          }
+        }
+      }
+      .cardPoint{
+        padding-left: 15px;
+        li{
+          position: relative;
+          font-size: 16px;
+          font-size: 1.6rem;
+          color: $deep-blue;
+          &::before{
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: -15px;
+            width: 8px;
+            height: 8px;
+            background: $middle-blue;
+            border-radius: 50%;
+          }
+          & + li{
+            margin-top: 8px;
+          }
+        }
+      }
+      .small{
+        margin-top: 8px;
+        font-size: 13px;
+        font-size: 1.3rem;
+      }
+      .noteTxt {
+        position: relative;
+        padding-left: 13px;
+        .noteIcon {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  @include mq-md{
+    .cardList{
+      margin: 0 -10px;
+      .col{
+        padding: 0 10px;
+        .card{
+          padding: 60px 15px 25px;
+          p{
+            font-size: 14px;
+            font-size: 1.4rem;
+          }
+          &Heading{
+            font-size: 20px;
+            font-size: 2rem;
+            word-break: keep-all;
+          }
+          .small{
+            font-size: 13px;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    .cardList{
+      .col{
+        margin: 0 auto 20px;
+        .card{
+          padding: 60px 20px 30px;
+          &::after{
+            top: auto;
+            bottom: -10px;
+            right: 0;
+            left: 0;
+            width: 34px;
+            height: 15px;
+            border: none;
+            border-top: solid 15px $middle-blue;
+            border-right: solid 17px transparent;
+            border-left: solid 17px transparent;
+          }
+          &Number{
+            top: 0;
+            left: 0;
+            img{
+              width: 50px;
+            }
+          }
+          &Heading{
+            font-size: 20px;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// #contact
+#contact{
+  padding: 120px 0;
+  background-image: url(/static/assets/image/static/pro/product/index/index_bg_function_pattern.jpg),
+  linear-gradient(135deg, $blue-grad-01 , $blue-grad-02);
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  .contactBtns{
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .btn{
+    position: relative;
+    display: block;
+    color: $white;
+    font-size: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 56px;
+    text-align: center;
+    background: $deep-blue;
+    border-radius: 28px;
+    .comment{
+      position: absolute;
+      left: 0;
+      top: -19px;
+      right: 0;
+      width: 200px;
+      color: $orange;
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 24px;
+      text-align: center;
+      background: $white;
+      border-radius: 12px;
+      z-index: 1;
+      margin: auto;
+      &::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        width: 10px;
+        height: -5px;
+        border-top: solid 5px $white;
+        border-left: solid 5px transparent;
+        border-right: solid 5px transparent;
+        margin: auto;
+        box-sizing: border-box;
+      }
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 25px;
+      width: 7px;
+      height: 7px;
+      border-top: solid 2px #fff;
+      border-right: solid 2px #fff;
+      transform: rotate(45deg);
+      margin: auto;
+    }
+    &.large{
+      font-size: 28px;
+      font-size: 2.8rem;
+      line-height: 80px;
+      border-radius: 40px;
+    }
+    &.orange{
+      background: linear-gradient(45deg, $orange 0%, $orange-grad-01 50%, $orange-grad-02 100%);
+    }
+    &.white{
+      color: $deep-blue;
+      background: $white;
+      &::after{
+        border-color: $deep-blue;
+      }
+    }
+  }
+  .row{
+    display: flex;
+    margin: 40px -15px 0;
+    .col{
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+  @include mq {
+    padding: 60px 0;
+    .sectionHeaderTtl{
+      .sp{
+        display: block;
+      }
+    }
+    .contactBtns{
+      padding: 0 20px;
+    }
+    .btn{
+      font-size: 15px;
+      font-size: 1.5rem;
+      line-height: 44px;
+      .comment{
+        width: 160px;
+        font-size: 12px;
+      }
+      &.large{
+        font-size: 20px;
+        font-size: 2rem;
+        line-height: 60px;
+      }
+    }
+    .row{
+      flex-wrap: wrap;
+      margin: 20px 0 0;
+      .col{
+        width: 100%;
+        padding: 0;
+        & + .col{
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+// footNav
+.footNav{
+  padding: 60px 0;
+  &List{
+    display: flex;
+    justify-content: center;
+    li{
+      color: $deep-blue;
+      font-size: 15px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      & + li{
+        margin-left: 30px;
+      }
+    }
+  }
+  @include mq {
+    padding: 0;
+    .layoutInner{
+      padding: 0;
+    }
+    &List{
+      display: block;
+      li{
+        width: 100%;
+        background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+        background-position: right 20px center;
+        background-size: 12px;
+        background-repeat: no-repeat;
+        a{
+          display: block;
+          font-size: 15px;
+          font-size: 1.5rem;
+          padding: 15px;
+          border-bottom: solid 1px $gray;
+        }
+        & + li{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// .pageTitle
+.pageTitle{
+  padding: 70px 15px;
+  background-image: url(/static/assets/image/static/pro/product/common/common_bg_page_title.jpg);
+  background-size: cover;
+  background-position: center;
+  .main{
+    color: $white;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    img{
+      vertical-align: bottom;
+      margin-right: 10px;
+    }
+    .sp{
+      display: none;
+    }
+  }
+  .sub{
+    color: $white;
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 100%;
+    text-align: center;
+    margin: 0 0 20px;
+    img{
+      height: 30px;
+      vertical-align: sub;
+      margin-right: 8px;
+    }
+  }
+  @include mq {
+    padding: 40px 15px;
+    .main{
+      font-size: 24px;
+      font-size: 2.4rem;
+      line-height: 30px;
+      img{
+        height: 30px;
+      }
+      .sp{
+        display: block;
+      }
+    }
+    .sub{
+      font-size: 18px;
+      font-size: 1.8rem;
+      margin: 0 0 10px;
+      img{
+        height: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+
+// #aboutHead
+#aboutHead{
+  text-align: center;
+  padding: 80px 0 70px;
+  p{
+    color: $deep-blue;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  .ttl{
+    position: relative;
+    display: inline-block;
+    color: $white;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding: 15px 20px;
+    background: linear-gradient(45deg, #f5a211 0%, $orange-grad-01 50%, $orange-grad-02 100%);
+    margin: 0 0 30px;
+    &::after{
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      width: 16px;
+      height: 10px;
+      border-top: solid 10px $orange-grad-01;
+      border-right: solid 8px transparent;
+      border-left: solid 8px transparent;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    .large{
+      font-size: 36px;
+      font-size: 3.6rem;
+    }
+  }
+  .orange{
+    color: $orange;
+  }
+  @include mq {
+    padding: 40px 0;
+    p{
+      font-size: 15px;
+      font-size: 1.5rem;
+    }
+    .ttl{
+      font-size: 15px;
+      font-size: 1.5rem;
+      .large{
+        font-size: 20px;
+        font-size: 2.0rem;
+      }
+    }
+  }
+}
+
+#aboutBody{
+  background: $white-blue;
+  .ttlArea{
+    text-align: center;
+    p{
+      color: $black-02;
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 168%;
+    }
+    .ttl{
+      color: $deep-blue;
+      font-size: 38px;
+      font-size: 3.8rem;
+      font-weight: 600;
+      margin: 0 0 30px;
+    }
+  }
+  .articleArea{
+    max-width: 880px;
+    padding: 30px;
+    background: $white;
+    margin: 40px auto 0;
+    .mothers{
+      display: flex;
+      margin: 0 0 30px;
+      img{
+        padding-right: 20px;
+      }
+      p{
+        color: $deep-blue;
+        height: 20px;
+        font-size: 18px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 130%;
+        margin: auto 0;
+      }
+    }
+    .articlePoint{
+      padding-left: 15px;
+      li{
+        position: relative;
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 130%;
+        &::before{
+          content: '';
+          position: absolute;
+          top: 5px;
+          left: -15px;
+          width: 8px;
+          height: 8px;
+          background: $middle-blue;
+          border-radius: 50%;
+        }
+        & + li{
+          margin-top: 8px;
+        }
+        .small{
+          font-size: 13px;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .borderBottom{
+      padding-bottom: 50px;
+      border-bottom: dotted 1px $deep-blue;
+      margin-bottom: 60px;
+    }
+    .historyList{
+      .ttl{
+        color: $deep-blue;
+        font-size: 24px;
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin: 0 0 30px;
+      }
+      dl{
+        display: flex;
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 27px;
+        dt{
+          width: 60px;
+          font-size: 13px;
+          font-size: 1.3rem;
+        }
+        dd{
+          width: calc(100% - 60px);
+        }
+      }
+    }
+  }
+  @include mq {
+    .ttlArea{
+      p{
+        font-size: 15px;
+        font-size: 1.5rem;
+      }
+      .ttl{
+        color: $deep-blue;
+        font-size: 24px;
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin: 0 0 30px;
+      }
+    }
+    .articleArea{
+      padding: 15px;
+      .mothers{
+        flex-wrap: wrap;
+        img{
+          padding-right: 10px;
+        }
+        p{
+          font-size: 16px;
+          font-size: 1.6rem;
+          margin: 15px 0 0;
+        }
+      }
+      .borderBottom{
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+      }
+      .historyList{
+        .ttl{
+          color: $deep-blue;
+          font-size: 24px;
+          font-size: 2.4rem;
+          font-weight: 600;
+          margin: 0 0 30px;
+        }
+        dl{
+          font-size: 14px;
+          font-size: 1.4rem;
+          line-height: 160%;
+          margin: 0 0 10px;
+        }
+      }
+      .historyList{
+        .ttl{
+          font-size: 20px;
+          font-size: 2rem;
+          margin: 0 0 20px;
+        }
+      }
+    }
+  }
+}
+
+#aboutFeature{
+  background-image: url(/static/assets/image/static/pro/product/about/about_bg_about_feature_pattern.png), url(/static/assets/image/static/pro/product/about/about_bg_about_feature.png);
+  background-size: 100% auto;
+  background-position: center bottom, center 400px;
+  background-repeat: no-repeat;
+  .featureList{
+    max-width: 880px;
+    margin: 0 auto 80px;
+    li{
+      position: relative;
+      padding: 30px;
+      background: $white;
+      box-shadow: 0 0 14px rgba(34, 36, 37, 0.2);
+      & + li{
+        margin-top: 40px;
+      }
+      .number{
+        position: absolute;
+        top: -30px;
+        left: -10px;
+      }
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        .colTxt{
+          width: calc(100% - 292px);
+          padding-right: 30px;
+          .ttl{
+            color: $deep-blue;
+            font-size: 24px;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 150%;
+            margin: 0 0 10px;
+            .orange{
+              color: $orange;
+            }
+          }
+          p{
+            font-size: 16px;
+            font-size: 1.6rem;
+            line-height: 170%;
+            .small{
+              font-size: 13px;
+              font-size: 1.3rem;
+            }
+          }
+        }
+        .colImg{
+          width: 292px;
+        }
+      }
+    }
+  }
+  @include mq {
+    background-size: 100% auto, auto 100%;
+    .featureList{
+      margin: 0 auto 40px;
+      li{
+        .number{
+          top: -18px;
+          left: -10px;
+          img{
+            height: 36px;
+          }
+        }
+        .row{
+          .colTxt{
+            width: 100%;
+            padding: 0;
+            .ttl{
+              font-size: 20px;
+              font-size: 2rem;
+              text-align: center;
+            }
+            p{
+              font-size: 15px;
+              font-size: 1.5rem;
+            }
+          }
+          .colImg{
+            width: 100%;
+            img{
+              display: block;
+              margin: 20px auto 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.featureBtns{
+  max-width: 880px;
+  margin: 0 auto;
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    .col{
+      width: 50%;
+      min-width: 450px;
+      padding: 0 10px;
+      margin: 0 auto 15px;
+      .btn{
+        position: relative;
+        display: block;
+        height: 90px;
+        color: $black;
+        font-size: 13px;
+        font-size: 1.3rem;
+        line-height: 150%;
+        padding: 15px 30px 15px 90px;
+        background: $white;
+        border: solid 2px $deep-blue;
+        border-radius: 45px;
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 20px;
+          bottom: 0;
+          width: 8px;
+          height: 8px;
+          border-top: solid 2px $deep-blue;
+          border-right: solid 2px $deep-blue;
+          margin: auto;
+          transform: rotate(45deg);
+        }
+        &Badge{
+          position: absolute;
+          top: 0;
+          left: 10px;
+          bottom: 0;
+          margin: auto;
+        }
+        .ttl{
+          display: block;
+          color: $deep-blue;
+          font-size: 18px;
+          font-size: 1.8rem;
+          font-weight: 600;
+          line-height: 100%;
+          margin: 0 0 5px;
+        }
+        .pc{
+          display: block;
+        }
+      }
+    }
+  }
+  @include mq {
+    .row{
+      .col{
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        & + .col{
+          margin-top: 20px;
+        }
+        .btn{
+          height: auto;
+          font-size: 12px;
+          font-size: 1.2rem;
+          padding: 15px 30px 15px 70px;
+          &Badge{
+            width: 50px;
+          }
+          .ttl{
+             font-size: 14px;
+             font-size: 1.4rem;
+          }
+          .pc{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#functionBlock{
+  background: $white-blue;
+  .functionList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    li{
+      width: 33.333%;
+      padding: 0 10px;
+      margin: 0 0 20px;
+      a{
+        position: relative;
+        display: flex;
+        height: 100%;
+        padding: 24px 30px 24px 70px;
+        background-color: $white;
+        background-image: url(/static/assets/image/static/pro/product/index/index_ico_case_proposal_list_arrow.png);
+        background-position: right 20px center;
+        background-repeat: no-repeat;
+        img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 20px;
+          margin: auto;
+        }
+        .txt{
+          color: $black;
+          font-size: 16px;
+          font-size: 1.6rem;
+          line-height: 160%;
+          margin: auto 0;
+          .ttl{
+            display: block;
+            color: $deep-blue;
+            font-size: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 5px;
+            small{
+              font-size: 16px;
+              font-size: 1.6rem;
+              line-height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq-md {
+    .functionList{
+      li{
+        width: 50%;
+      }
+    }
+  }
+  @include mq {
+    .functionList{
+      margin: 0;
+      li{
+        width: 100%;
+        padding: 0;
+        margin: 0 0 10px;
+        a{
+          padding: 20px 30px 20px 60px;
+          background-position: right 15px center;
+          img{
+            left: 15px;
+          }
+          .txt{
+            font-size: 14px;
+            font-size: 1.4rem;
+            .ttl{
+              font-size: 18px;
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .articleBlock
+.articleBlock{
+  max-width: 880px;
+  margin: 0 auto 80px;
+  p{
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 160%;
+    margin: 20px;
+    & + img{
+      margin-top: 50px;
+    }
+  }
+  .ttl{
+    color: $deep-blue;
+    font-size: 26px;
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-top: 60px;
+  }
+  img{
+    display: block;
+    margin: 0 auto;
+    & + img{
+      margin-top: 30px;
+    }
+  }
+  ul{
+    padding-left: 20px;
+    margin: 20px;
+    li{
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 160%;
+      list-style-type: disc;
+      & + li{
+        margin-top: 5px;
+      }
+      .small{
+        font-size: 14px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  @include mq {
+    margin: 0 auto 40px;
+    p{
+      font-size: 15px;
+      font-size: 1.5rem;
+      margin: 15px 0;
+      & + img{
+        margin-top: 30px;
+      }
+    }
+    ul{
+      margin: 15px 0;
+      li{
+        font-size: 15px;
+        font-size: 1.5rem;
+        & + li{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// #voiceBlock
+#voiceBlock{
+  background-color: $voice-middle-blue;
+  background-image: url(/static/assets/image/static/pro/product/voice/voice_bg_pattern.jpg);
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  .voiceCard{
+    max-width: 880px;
+    margin: 0 auto;
+    box-shadow: 0 0 14px rgba(34, 36, 37, 0.2);
+    & + .voiceCard{
+      margin-top: 180px;
+    }
+    .cardHead{
+      position: relative;
+      padding: 100px 15px 40px;
+      background: $blue-grad-01;
+      margin: 86px 0 0;
+      &Icon{
+        position: absolute;
+        top: -86px;
+        right: 0;
+        left: 0;
+        border: solid 8px $blue-grad-01;
+        border-radius: 50%;
+        margin: auto;
+      }
+      .ttl{
+        color: $white;
+        font-size: 23px;
+        font-size: 2.3rem;
+        font-weight: 600;
+        line-height: 150%;
+        text-align: center;
+      }
+    }
+    .cardBody{
+      padding: 45px 30px;
+      background: $white;
+      p{
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 160%;
+      }
+      strong{
+        font-weight: 600;
+      }
+      .voicePointList{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px 20px;
+        li{
+          width: 50%;
+          padding: 0 10px;
+          margin: 0 0 20px;
+          .item{
+            display: flex;
+            height: 100%;
+            min-height: 100px;
+            padding: 10px 25px 10px 58px;
+            background-color: $white;
+            background-image: url(/static/assets/image/static/pro/product/voice/voice_ico_voice_card_point_check.jpg);
+            background-position: 20px center;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 14px rgba(34, 36, 37, 0.2);
+            p{
+              color: $deep-blue;
+              font-size: 19px;
+              font-size: 1.9rem;
+              font-weight: 600;
+              letter-spacing: -0.02em;
+              margin: auto 0;
+              .small{
+                font-size: 16px;
+                font-size: 1.6rem;
+              }
+            }
+            @media all and (-ms-high-contrast: none){
+              p{
+                height: 60px;
+                &.single{
+                  height: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .person{
+        padding: 50px 0 0;
+        border-top: dotted 1px $deep-blue;
+        margin: 50px 0 0;
+        p{
+          text-align: center;
+        }
+        .name{
+          color: $deep-blue;
+          font-size: 18px;
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin: 0 0 10px;
+          .thin{
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  @include mq {
+    .voiceCard{
+      & + .voiceCard{
+        margin-top: 90px;
+      }
+      .cardHead{
+        padding: 70px 15px 30px;
+        margin: 45px 0 0;
+        &Icon{
+          top: -45px;
+          width: 90px;
+          border-width: 4px;
+        }
+        .ttl{
+          font-size: 18px;
+          font-size: 1.8rem;
+          .pc{
+            display: none;
+          }
+        }
+      }
+      .cardBody{
+        padding: 30px 15px;
+        p{
+          font-size: 15px;
+          font-size: 1.5rem;
+        }
+        .voicePointList{
+          margin: 0 0 20px;
+          li{
+            width: 100%;
+            padding: 0;
+            .item{
+              height: auto;
+              min-height: 0;
+              padding: 20px 20px 20px 30px;
+              background-size: 12px auto;
+              background-position: 10px center;
+              p{
+                font-size: 17px;
+                font-size: 1.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// #faqBlock
+#faqBlock{
+  background: $white-blue;
+  .faqList{
+    .question{
+      background: $white;
+      cursor: pointer;
+      &.open{
+        .questionHead::after{
+          transform: rotate(180deg);
+        }
+      }
+      & + .question{
+        margin-top: 30px;
+      }
+      &Head, &Body{
+        padding: 32px 60px 32px 85px;
+        background-repeat: no-repeat;
+        p{
+          font-size: 16px;
+          font-size: 1.6rem;
+        }
+      }
+      &Head{
+        position: relative;
+        background-image: url(/static/assets/image/static/pro/product/faq/faq_ico_question_head.png);
+        background-position: 30px center;
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 30px;
+          bottom: 0;
+          display: block;
+          width: 28px;
+          height: 28px;
+          background-image: url(/static/assets/image/static/pro/product/faq/faq_ico_question_arrow.png);
+          background-size: contain;
+          margin: auto;
+          transition: all 0.2s ease-in-out;
+        }
+        p{
+          color: $deep-blue;
+          font-weight: 600;
+          line-height: 140%;
+        }
+      }
+      &Body{
+        display: none;
+        background-image: url(/static/assets/image/static/pro/product/faq/faq_ico_question_body.png);
+        background-position: 30px 26px;
+        border-top: solid 5px $white-blue;
+        p{
+          line-height: 180%;
+        }
+      }
+    }
+  }
+  @include mq {
+    .faqList{
+      .question{
+        & + .question{
+          margin-top: 15px;
+        }
+        &Head, &Body{
+          padding: 20px 40px 20px 50px;
+          background-size: 25px auto;
+          p{
+            font-size: 15px;
+            font-size: 1.5rem;
+          }
+        }
+        &Head{
+          background-position: 15px center;
+          &::after{
+            right: 15px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        &Body{
+          background-position: 15px 20px;
+        }
+      }
+    }
+  }
+}

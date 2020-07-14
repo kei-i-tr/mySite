@@ -1,0 +1,14 @@
+$breakpoint: 750px;
+$breakpoint-md: 1023px;
+
+@mixin mq {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media screen and (max-width: $breakpoint-md) {
+    @content;
+  }
+}

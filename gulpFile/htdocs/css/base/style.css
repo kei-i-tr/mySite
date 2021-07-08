@@ -1,0 +1,16 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: plum;
+}
+
+.button {
+  transition: 0.3s;
+  background-color: grey;
+  color: #000;
+}
+.button:hover {
+  transition: 0.3s;
+  background-color: #fff;
+}

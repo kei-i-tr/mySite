@@ -1,0 +1,17 @@
+.box {
+  align-items: center;
+  color: plum;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: grey;
+  color: #000;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: #fff;
+  transition: 0.3s;
+}
+/*# sourceMappingURL=../sourcemaps/top/style.css.map */

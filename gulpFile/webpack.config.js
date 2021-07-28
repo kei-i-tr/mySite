@@ -11,7 +11,7 @@ module.exports = {
   },
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: `./js/main.js`,
+  entry: `./src/js/main.js`,
 
   // babel
   module: {

@@ -35,7 +35,7 @@ const compileSass = done => {
   .pipe(sass({outputStyle: 'expanded'}))
   .pipe(postcss(postcssPlugins))
   .pipe(mode.production(gcmq()))
-  .pipe(dest("./dist/css", { sourcemaps: './sourcemaps' /* write */ }));
+  .pipe(dest("./assets/css", { sourcemaps: './sourcemaps' /* write */ }));
   done(); // 終了宣言
 }
 
@@ -44,6 +44,8 @@ const buildServer = done => {
   browserSync.init({
     port: 8080,
     notify: false,
+    files: ['./**/*.html'],
+    startPath: './public/index.html',
 　　// 静的サイト
     server: {
       baseDir: './',
@@ -65,7 +67,7 @@ const browserReload = done => {
 const bundleJs = () => {
   // webpackStreamの第2引数にwebpackを渡す
   return webpackStream(webpackConfig, webpack)
-    .pipe(dest("./dist/js"));
+    .pipe(dest("./assets/js"));
 };
 
 // ファイル監視

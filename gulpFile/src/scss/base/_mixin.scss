@@ -33,9 +33,15 @@
 }
 
 // font-size（フォントサイズ）
-@mixin fz($size) {
-	     font-size:$size;
-	 font-size: ($size / 16px) * 1rem;
+@mixin fz($size: $baseFontSize, $important: "") {
+    $imp: "";
+
+    @if $important == "i" {
+        $imp: " !important";
+    }
+
+    font-size: $size + px + $imp;
+    font-size: $size / nounit($baseFontSize) + rem + $imp;
 }
 
 // box-shadow（ボックスシャドウ）

@@ -66,4 +66,15 @@ div:after {
   display: block;
   position: absolute;
 }
-/*# sourceMappingURL=../sourcemaps/top/index.css.map */
+
+@media (min-width: 751px) {
+  div {
+    background-color: #cccccc;
+  }
+}
+@media (max-width: 750px) {
+  div {
+    background-color: #11aaaa;
+  }
+}
+/*# sourceMappingURL=../sourcemaps/prodcut/style.css.map */

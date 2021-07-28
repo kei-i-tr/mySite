@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
     Reset
 */
@@ -23,8 +24,57 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/*
+    Setting
+*/
+/*
+    コンテンツ幅
+*/
+/*
+    ベースとなる余白幅
+*/
+/*
+    ベースとなる角丸の角度
+*/
+/*
+    mixin
+    参照元：https://coliss.com/articles/build-websites/operation/css/15-essential-sass-mixins-by-developerdrive.html
+*/
+/* clearfix */
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* margin */
+/* mediaquery */
+/* invisibilityElem */
 body {
-  background-color: red;
   display: inline-block;
+}
+
+div {
+  height: 500px;
+  position: relative;
+  width: 500px;
+}
+div:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+@media (min-width: 751px) {
+  div {
+    background-color: #cccccc;
+  }
+}
+@media (max-width: 750px) {
+  div {
+    background-color: #11aaaa;
+  }
 }
 /*# sourceMappingURL=../sourcemaps/top/index.css.map */

@@ -66,4 +66,17 @@ div:after {
   display: block;
   position: absolute;
 }
-/*# sourceMappingURL=../sourcemaps/top/index.css.map */
+
+@media (min-width: 751px) {
+  .sample {
+    font-size: 24px;
+    font-size: 24/nounit(16px)rem;
+  }
+}
+@media (max-width: 750px) {
+  .sample {
+    font-size: 24px;
+    font-size: 24/nounit(16px)rem;
+  }
+}
+/*# sourceMappingURL=../../sourcemaps/prodcut/hotel_paraiso/style.css.map */

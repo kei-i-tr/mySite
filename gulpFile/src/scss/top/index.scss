@@ -1,6 +1,17 @@
 @import "../base/_reset.scss";
+@import "../base/_setting.scss";
+@import "../base/_mixin.scss";
+
+$color01: #cccccc; // ホワイト
+$color02: #11aaaa; // グレーベース
+$color03: #333333; // テキストカラー
 
 body {
-	background-color: red;
 	display: inline-block;
+}
+div {
+	@include setElem(after, "");
+
+	width: 500px;
+	height: 500px;
 }

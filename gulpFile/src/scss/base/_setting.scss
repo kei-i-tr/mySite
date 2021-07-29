@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/*
+    Setting
+*/
+
+// font-family
+$baseFont: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", YuGothic, "メイリオ", Meiryo, sans-serif;
+$minchoFont: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+$timesFont: "Times New Roman", Times, serif;
+$arialFont: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+// font-size
+$baseFontSize: 16px;
+
+//  line-height
+$baseFontLines: 1.6;
+
+/*
+    コンテンツ幅
+*/
+$spMaxWidth: 750px;
+$contMinWidth: 1000px;
+$contMaxWidth: 1200px;
+
+/*
+    ベースとなる余白幅
+*/
+// 縦方向
+$spBaseMgn: 4px;
+$baseMgn: 16px;
+
+// 横方向
+$spBaseSideMgn: 4%;
+$baseSideMgn: 16px;
+
+/*
+    ベースとなる角丸の角度
+*/
+$baseR: 6px;

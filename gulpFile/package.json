@@ -12,7 +12,8 @@
   "dependencies": {
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-mode": "^1.1.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "trim-newlines": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

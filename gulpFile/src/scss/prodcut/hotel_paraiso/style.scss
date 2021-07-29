@@ -1,0 +1,25 @@
+@import "./src/scss/base/_reset.scss";
+@import "./src/scss/base/_setting.scss";
+@import "./src/scss/base/_mixin.scss";
+
+$color01: #cccccc; // ホワイト
+$color02: #11aaaa; // グレーベース
+$color03: #333333; // テキストカラー
+
+body {
+	display: inline-block;
+}
+div {
+	@include setElem(after, "");
+
+	width: 500px;
+	height: 500px;
+}
+
+@include mqPc() {
+	@import "./src/scss/prodcut/hotel_paraiso/pc.scss";
+}
+
+@include mqSp() {
+	@import "./src/scss/prodcut/hotel_paraiso/sp.scss";
+}

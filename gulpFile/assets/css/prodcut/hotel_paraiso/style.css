@@ -52,25 +52,82 @@ time, mark, audio, video {
 /* margin */
 /* mediaquery */
 /* invisibilityElem */
-body {
-  display: inline-block;
+a {
+  text-decoration: none;
 }
-
-div {
-  height: 500px;
-  position: relative;
-  width: 500px;
-}
-div:after {
-  content: "";
-  display: block;
-  position: absolute;
+a:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 751px) {
-  .sample {
-    font-size: 24px;
-    font-size: 24/nounit(16px)rem;
+  body {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  #mainContWrap {
+    background-color: #E3E6E1;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 24px;
+    position: relative;
+    width: 1024px;
+  }
+  #mainContWrap main {
+    height: 100%;
+  }
+  #mainContWrap .welcomeBlock {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+  }
+  #mainContWrap .welcomeBlock .welcomeTxt {
+    text-align: center;
+  }
+  #mainContWrap nav.globalNav {
+    box-sizing: boder-box;
+    position: absolute;
+    right: -24px;
+    text-align: right;
+    top: 24px;
+  }
+  #mainContWrap nav.globalNav .navInner {
+    list-style-type: none;
+    padding: 16px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+  }
+  #mainContWrap nav.globalNav .navInner:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  #mainContWrap nav.globalNav .navInner li {
+    letter-spacing: 3px;
+    line-height: 1.6;
+  }
+  #mainContWrap nav.globalNav .navInner li a {
+    color: #ffffff;
+    font-family: "Merriweather", serif;
+    font-size: 26px;
+    font-size: 26/nounit(16px)rem;
+    font-weight: 700;
+  }
+  #mainContWrap nav.globalNav .navInner:after {
+    border-color: transparent #4B5F65 transparent transparent;
+    border-style: solid;
+    border-width: 0 280px 380px 0;
+    height: 0;
+    right: 0;
+    top: 0;
+    width: 0;
+    z-index: -1;
   }
 }
 @media (max-width: 750px) {

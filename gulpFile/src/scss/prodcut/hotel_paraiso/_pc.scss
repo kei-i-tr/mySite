@@ -1,3 +1,77 @@
-.sample {
-	@include fz(24);
+body {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#mainContWrap {
+	@include box-sizing(border-box);
+
+	display: block;
+	position: relative;
+	width: 1024px;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: mgn(1);
+	background-color: $color12;
+
+	main {
+		height: 100%;
+	}
+
+	.welcomeBlock {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+
+		.welcomeTxt {
+			text-align: center;
+		}
+	}
+
+	// ナビゲーションエリア
+
+	nav.globalNav {
+		@include box-sizing(boder-box);
+
+		position: absolute;
+		top: 24px;
+		right: -24px;
+		text-align: right;
+
+		.navInner {
+			@include setElem(after, "");
+
+			top: 0;
+			z-index: 1;
+			padding: mgn(0);
+			list-style-type: none;
+
+			li {
+				line-height: 1.6;
+				letter-spacing: 3px;
+
+				a {
+					@include fz(26);
+
+					color: $color01;
+					font-family: 'Merriweather', serif;
+					font-weight: 700;
+				}
+			}
+
+			&:after {
+				top: 0;
+				right: 0;
+				z-index: -1;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 280px 380px 0;
+				border-color: transparent $color07 transparent transparent;
+			}
+		}
+	}
 }

@@ -2,24 +2,34 @@
 @import "./src/scss/base/_setting.scss";
 @import "./src/scss/base/_mixin.scss";
 
-$color01: #cccccc; // ホワイト
-$color02: #11aaaa; // グレーベース
+$color01: #ffffff; // ホワイト
+$color02: #000000; // グレーベース
 $color03: #333333; // テキストカラー
+$color04: #918879; // ブラウン01
+$color05: #C7B5A8; // ブラウン02
+$color06: #CECCB8; // ブラウン03
+$color07: #4B5F65; // ブルー01
+$color08: #BBBECA; // ブルー02
+$color09: #B7C6C7; // ブルー03
+$color10: #352E2B; // グレー01
+$color11: #AEAFAF; // グレー02
+$color12: #E3E6E1; // グレー03
 
-body {
-	display: inline-block;
+//共通要素
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
-div {
-	@include setElem(after, "");
 
-	width: 500px;
-	height: 500px;
-}
-
+// PC
 @include mqPc() {
-	@import "./src/scss/prodcut/hotel_paraiso/pc.scss";
+	@import "./src/scss/prodcut/hotel_paraiso/_pc.scss";
 }
 
+//SP
 @include mqSp() {
-	@import "./src/scss/prodcut/hotel_paraiso/sp.scss";
+	@import "./src/scss/prodcut/hotel_paraiso/_sp.scss";
 }

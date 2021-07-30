@@ -75,19 +75,7 @@ a:hover {
     padding: 24px;
     position: relative;
     width: 1024px;
-  }
-  #mainContWrap main {
-    height: 100%;
-  }
-  #mainContWrap .welcomeBlock {
-    display: block;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%);
-  }
-  #mainContWrap .welcomeBlock .welcomeTxt {
-    text-align: center;
+    /* メイン要素 */
   }
   #mainContWrap nav.globalNav {
     box-sizing: boder-box;
@@ -128,6 +116,24 @@ a:hover {
     top: 0;
     width: 0;
     z-index: -1;
+  }
+  #mainContWrap main {
+    height: calc(100vh - 48px);
+    margin: 0 auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+  #mainContWrap .welcomeBlock {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+  }
+  #mainContWrap .welcomeBlock .welcomeTxt {
+    text-align: center;
   }
 }
 @media (max-width: 750px) {

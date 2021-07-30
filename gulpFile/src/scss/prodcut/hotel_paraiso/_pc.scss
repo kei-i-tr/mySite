@@ -15,24 +15,7 @@ body {
 	padding: mgn(1);
 	background-color: $color12;
 
-	main {
-		height: 100%;
-	}
-
-	.welcomeBlock {
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%);
-
-		.welcomeTxt {
-			text-align: center;
-		}
-	}
-
 	// ナビゲーションエリア
-
 	nav.globalNav {
 		@include box-sizing(boder-box);
 
@@ -74,4 +57,27 @@ body {
 			}
 		}
 	}
+
+	/* メイン要素 */
+	main {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 48px);
+		margin: 0 auto;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+
+	.welcomeBlock {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+
+		.welcomeTxt {
+			text-align: center;
+		}
+	}
+
 }

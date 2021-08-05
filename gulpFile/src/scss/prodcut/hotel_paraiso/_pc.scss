@@ -80,4 +80,27 @@ body {
 		}
 	}
 
+	.notification {
+	  position: fixed;
+	  left: 0;
+	  right: 0;
+	  bottom: 20%;
+	  margin: 0 auto;
+	  text-align: center;
+	  opacity: 0;
+	  visibility: hidden;
+	  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s ease 0.4s;
+	}
+	.notification p {
+	  display: inline-block;
+	  padding: 4px 8px;
+	  color: #fff;
+	  background: rgba(153, 153, 153, 0.5);
+	  border-radius: 4px;
+	}
+	.notification.active {
+	  opacity: 1;
+	  visibility: visible;
+	  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
+	}
 }

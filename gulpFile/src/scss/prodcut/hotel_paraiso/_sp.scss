@@ -142,6 +142,49 @@ body {
 		}
 	}
 
+	/* コピーエリア */
+	.targetWrap {
+		position: relative;
+		margin-left: mgn(-1);
+		margin-top: mgn(-1);
+
+		.textBox {
+			width: 85%;
+			height: 200px;
+			padding: mgn(1);
+			margin: 16px 0;
+			background: rgba(255,255,255,0.8);
+			overflow-x: hidden;
+			border: none;
+			color: #333333;
+		}
+
+		.copyIcon {
+			@include fz(24);
+
+			position: absolute;
+			display: block;
+            top: 0;
+            left: -8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            box-sizing: border-box;
+            background: rgba($color02,0.6);
+            color: $color01;
+            text-align: center;
+
+		}
+
+		&:hover {
+			.textBox {
+				cursor: pointer;
+				opacity: 0.6;
+				transition: all 0.3s ease-out;
+			}
+		}
+	}
+
 	.notification {
 	  position: fixed;
 	  left: 0;

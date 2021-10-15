@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HOTEL PARAISO</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="/assets/css/prodcut/hotel_paraiso/style.css">
+
+	<!-- fontawesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -44,42 +46,40 @@
 				改行
 			</p>
 
-			<!-- Target -->
-			<input id="text" value="ボタンをクリックするとこのテキストがクリップボードにコピーされます。" readonly>
+	<div class="copyBtn targetWrap" data-clipboard-target="#target01">
+    	<textarea id="target01" class="textBox" readonly>
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+    	</textarea>
+    	<span class="copyIcon"><i class="far fa-copy"></i></span>
+   	</div>
 
-			<!-- Trigger -->
-			<button class="btn" data-clipboard-target="#text">
-			  Click to Copy
-			</button>
+    <br>
 
-			<!-- <textarea>
-			テキストエリア
-			</textarea>
-
-			<button class="copy_clipboad"><i class="fas fa-clipboard"></i>クリップボードにコピー</button>
-			</main> -->
+    
 
 			<div id="notification" class="notification">
-				<p>Copied!</p>
+				<p>コピーしました</p>
 			</div>
 		</main>
 	</div>
-<!-- 	<script>
-		$(function() {
-		    $('.navToggle'+','+'.navBack').click(function() {
-		        $(this).toggleClass('active');
-		 
-		        if ($(this).hasClass('active')) {
-		            $('.globalNav').addClass('active');
-		            $('.navBack').addClass('active');
-		        } else {
-		            $('.globalNav').removeClass('active');
-		            $('.navBack').removeClass('active');
-		        }
-		    });
-		});
-	</script> -->
-
 </body>
+
+<!-- js読み込み -->
 <script type="text/javascript" src="/assets/js/bundle.js"></script>
 </html>

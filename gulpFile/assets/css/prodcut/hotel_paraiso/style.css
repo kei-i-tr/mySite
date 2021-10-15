@@ -52,6 +52,7 @@ time, mark, audio, video {
 /* margin */
 /* mediaquery */
 /* invisibilityElem */
+/* 中央寄せ */
 a {
   text-decoration: none;
 }
@@ -76,6 +77,8 @@ a:hover {
     position: relative;
     width: 1024px;
     /* メイン要素 */
+    /* コピーエリア */
+    /* clipbord関連 */
   }
   #mainContWrap nav.globalNav {
     box-sizing: boder-box;
@@ -135,6 +138,41 @@ a:hover {
   #mainContWrap .welcomeBlock .welcomeTxt {
     text-align: center;
   }
+  #mainContWrap .targetWrap {
+    margin-left: 16px;
+    margin-top: 8px;
+    position: relative;
+  }
+  #mainContWrap .targetWrap .textBox {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333333;
+    height: 200px;
+    margin: 16px 0;
+    overflow-x: hidden;
+    padding: 24px;
+    width: 90%;
+  }
+  #mainContWrap .targetWrap .copyIcon {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    font-size: 24px;
+    font-size: 24/nounit(16px)rem;
+    height: 40px;
+    left: -16px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 40px;
+  }
+  #mainContWrap .targetWrap:hover .textBox {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease-out;
+  }
   #mainContWrap .notification {
     bottom: 20%;
     left: 0;
@@ -175,6 +213,7 @@ a:hover {
     position: relative;
     width: 100%;
     /* メイン要素 */
+    /* コピーエリア */
   }
   #mainContWrap .navToggle {
     cursor: pointer;
@@ -287,6 +326,41 @@ a:hover {
   }
   #mainContWrap .welcomeBlock .welcomeTxt {
     text-align: center;
+  }
+  #mainContWrap .targetWrap {
+    margin-left: 8px;
+    margin-top: 8px;
+    position: relative;
+  }
+  #mainContWrap .targetWrap .textBox {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333333;
+    height: 200px;
+    margin: 16px 0;
+    overflow-x: hidden;
+    padding: 24px;
+    width: 85%;
+  }
+  #mainContWrap .targetWrap .copyIcon {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    font-size: 24px;
+    font-size: 24/nounit(16px)rem;
+    height: 40px;
+    left: -8px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 40px;
+  }
+  #mainContWrap .targetWrap:hover .textBox {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease-out;
   }
   #mainContWrap .notification {
     bottom: 20%;

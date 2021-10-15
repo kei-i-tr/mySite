@@ -4,12 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HOTEL PARAISO</title>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 	<link rel="stylesheet" href="/assets/css/prodcut/hotel_paraiso/style.css">
 </head>
-
-
 
 <body>
 	<div id="mainContWrap">
@@ -40,41 +36,32 @@
     </p>
  
     <p>
-      <input id="data" type="text" size="20">
-      <button class="copyBtn" data-clipboard-target="#data">入力をコピー</button>
+
+      <textarea id="target01" stlye="display:block">
+例文
+長文
+どうだし
+      </textarea>
+
+      <br>
+
+      <button class="copyBtn" data-clipboard-target="#target01">入力をコピー</button>
     </p>
- 
+
     <p>
       <input id="data2" type="text" size="20">
       <button class="copyBtn" data-clipboard-target="#data2" data-clipboard-action="cut">入力をカット</button>
     </p>
-<!-- 
-<textarea id="foo">
-	複数行の
-	テキスト
-</textarea>
-
-		<button class="btn" data-clipboard-target="#foo"><i class="fas fa-clipboard"></i>クリップボードにコピー</button>
-
-
-		<button type="button" class="copyRinkBtn" data-clipboard-text="https://go.aucfan.com/l/795903/2020-02-18/cpjm">コピー</button>
- -->
 
 		</main>
 	</div>
 
-		<script type="text/javascript" src="/assets/js/bundle.js"></script>
+	<!-- complete modal -->
+	<div class="completeModal">
+		コピーしました
+	</div>
 
-		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script> -->
-
-<!-- 		<script>
-			var clipboard = new Clipboard('.btn');
-			clipboard.on('success', function(e) {
-			  alert('成功しました');
-			});
-			clipboard.on('error', function(e) {
-			  // 処理が失敗したときに呼ばれる処理
-			});
-		</script> -->
+	<!-- js読み込み -->
+	<script type="text/javascript" src="/assets/js/bundle.js"></script>
 </body>
 </html>

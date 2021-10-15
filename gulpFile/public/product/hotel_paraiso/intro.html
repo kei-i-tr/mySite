@@ -4,9 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HOTEL PARAISO</title>
-	<!-- <script type="text/javascript" src="/assets/js/bundle.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="/assets/css/prodcut/hotel_paraiso/style.css">
 </head>
+
+
 
 <body>
 	<div id="mainContWrap">
@@ -31,33 +34,47 @@
 		</nav>
 		<main>
 			<h1 id="導入">導入</h1>
-		<h2 id="大まかな流れ（図）">大まかな流れ（図）</h2>
-		<p>[全員エントランススタート]<br>↓<br>[3Fへ案内]<br>↓<br>[みんなで会合]<br>↓<br>[解散]（探索スタート）</p>
-		<h2 id="導入詳細">導入詳細</h2>
-		<p>探索者たちは様々な移動手段でホテルに到着し、ホテルの扉を開ける。</p>
 
-<textarea>
-ホテルといえば回転式扉のイメージだったがこのホテルは違うようだ。
-最近では珍しい、両開きの重い扉を押し開ける。
-ひんやりとした空気が貴方を包み、シンナーや塗料、新品の木材にそれらを誤魔化すための香、なんとも言えない新築の建物独特の匂いが鼻腔をくすぐった。
-
-扉の先はホテルの正面エントランスとなっているようで、赤を基調とした高い天井の空間には、豪奢なシャンデリアや高級そうな革張りのソファーなどが並んでいる。
-エントランスの奥の壁には大きな絵画が何枚か飾られていた。
-
-本来であればここには複数のホテルスタッフと客がいるのだろうが、今は閑散としている。オープン記念ならもっとスタッフがいるべきではないだろうか？
-
-あなたの視線の先、フロアの中央には一人の男性が立っている。
-人種はユダヤ系だろう。細身で背の高い浅黒い肌の男だ。ホテルマンのようで、頭頂から爪先に至るまでが張り詰められた糸のように整えられており、清潔で厳格な印象を与える。
-服装もホテルマンのそれだが、首から掛けられた古い鍵だけが他と浮いている。
-
-ホテルマンが口を開く。
-「ホテル・パライソへようこそ。お客様方」
-
-いつのまに入ってきのだろうか、周りにはあなた以外に6人の客と思われる人物がいた。
+    <p>
+      <button class="copyBtn" data-clipboard-text="ABC">ABCをコピー</button>
+    </p>
+ 
+    <p>
+      <input id="data" type="text" size="20">
+      <button class="copyBtn" data-clipboard-target="#data">入力をコピー</button>
+    </p>
+ 
+    <p>
+      <input id="data2" type="text" size="20">
+      <button class="copyBtn" data-clipboard-target="#data2" data-clipboard-action="cut">入力をカット</button>
+    </p>
+<!-- 
+<textarea id="foo">
+	複数行の
+	テキスト
 </textarea>
 
-		<button class="copy_clipboad"><i class="fas fa-clipboard"></i>クリップボードにコピー</button>
+		<button class="btn" data-clipboard-target="#foo"><i class="fas fa-clipboard"></i>クリップボードにコピー</button>
+
+
+		<button type="button" class="copyRinkBtn" data-clipboard-text="https://go.aucfan.com/l/795903/2020-02-18/cpjm">コピー</button>
+ -->
+
 		</main>
 	</div>
+
+		<script type="text/javascript" src="/assets/js/bundle.js"></script>
+
+		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script> -->
+
+<!-- 		<script>
+			var clipboard = new Clipboard('.btn');
+			clipboard.on('success', function(e) {
+			  alert('成功しました');
+			});
+			clipboard.on('error', function(e) {
+			  // 処理が失敗したときに呼ばれる処理
+			});
+		</script> -->
 </body>
 </html>

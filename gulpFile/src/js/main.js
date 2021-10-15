@@ -1,9 +1,13 @@
-// import 文を使って sub.js ファイルを読み込む。
-import { hello } from "./sub";
+// import 'velocity-animate';
 
 /** Import Page Module */ // パスの昇順で記載する
+import 'jquery';
 import {copyUrlAction} from './module/copy_url';
+// import {navToggle} from './module/nav_toggle';
 
-// sub.jsに定義されたJavaScriptを実行する。
-// hello();
-copyUrlAction('.btn');
+
+// target page only
+copyUrlAction('.copyBtn');
+
+// let spNavToggle = new navToggle();
+// spNavToggle.init();

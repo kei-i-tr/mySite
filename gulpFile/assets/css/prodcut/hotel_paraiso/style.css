@@ -160,9 +160,156 @@ a:hover {
   }
 }
 @media (max-width: 750px) {
-  .sample {
-    font-size: 24px;
-    font-size: 24/nounit(16px)rem;
+  body {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  #mainContWrap {
+    background-color: #E3E6E1;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+    /* メイン要素 */
+  }
+  #mainContWrap .navToggle {
+    cursor: pointer;
+    display: block;
+    height: 51px;
+    position: fixed;
+    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    text-align: center;
+    top: 12px;
+    width: 42px;
+    z-index: 3;
+  }
+  #mainContWrap .navToggle span {
+    border-bottom: solid 3px #eee;
+    display: block;
+    left: 6px;
+    position: absolute;
+    transition: 0.35s ease-in-out;
+    /* .navToggleに対して */
+    width: 30px;
+  }
+  #mainContWrap .navToggle span:nth-child(1) {
+    top: 9px;
+  }
+  #mainContWrap .navToggle span:nth-child(2) {
+    top: 18px;
+  }
+  #mainContWrap .navToggle span:nth-child(3) {
+    top: 27px;
+  }
+  #mainContWrap .navToggle.active span:nth-child(1), #mainContWrap .navToggle.active span:nth-child(2), #mainContWrap .navToggle.active span:nth-child(3) {
+    opacity: 0;
+  }
+  #mainContWrap nav.globalNav {
+    box-sizing: boder-box;
+    color: #000;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    text-align: right;
+    top: 0;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+    z-index: 2;
+    /* このクラスを、jQueryで付与・削除する */
+  }
+  #mainContWrap nav.globalNav .navInner {
+    list-style-type: none;
+    padding: 16px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+  }
+  #mainContWrap nav.globalNav .navInner:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  #mainContWrap nav.globalNav .navInner li {
+    letter-spacing: 3px;
+    line-height: 1.6;
+  }
+  #mainContWrap nav.globalNav .navInner li a {
+    color: #ffffff;
+    font-family: "Merriweather", serif;
+    font-size: 26px;
+    font-size: 26/nounit(16px)rem;
+    font-weight: 700;
+  }
+  #mainContWrap nav.globalNav .navInner:after {
+    border-color: transparent #4B5F65 transparent transparent;
+    border-style: solid;
+    border-width: 0 280px 380px 0;
+    height: 0;
+    right: 0;
+    top: 0;
+    width: 0;
+    z-index: -1;
+  }
+  #mainContWrap nav.globalNav.active {
+    transform: translateY(0%);
+  }
+  #mainContWrap .navBack {
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    height: 100%;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  #mainContWrap main {
+    height: calc(100vh - 48px);
+    margin: 0 auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+  #mainContWrap .welcomeBlock {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+  }
+  #mainContWrap .welcomeBlock .welcomeTxt {
+    text-align: center;
+  }
+  #mainContWrap .notification {
+    bottom: 20%;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s ease 0.4s;
+    visibility: hidden;
+  }
+  #mainContWrap .notification p {
+    background: rgba(153, 153, 153, 0.5);
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 8px;
+  }
+  #mainContWrap .notification.active {
+    opacity: 1;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=../../sourcemaps/prodcut/hotel_paraiso/style.css.map */

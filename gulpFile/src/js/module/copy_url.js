@@ -5,7 +5,6 @@ import ClipboardJS from '../plugin/clipboard.min';
  * @param {String} target
  * @constructor
  */
-
 export function copyUrlAction(target) {
     let clipboard = new ClipboardJS(target);
     let alertComment = 'URLをコピーしました';

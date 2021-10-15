@@ -4,16 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HOTEL PARAISO</title>
-	<!-- <script type="text/javascript" src="/assets/js/bundle.js"> --></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
 	<link rel="stylesheet" href="/assets/css/prodcut/hotel_paraiso/style.css">
 </head>
 
 <body>
 	<div id="mainContWrap">
-		<nav class="globalNav">
+		<div class="js-trigger navToggle">
+		    <span></span><span></span><span></span>
+		</div>
+		<div class="navBack js-back"></div>
+		<nav class="globalNav js-target">
 			<ul class="navInner">
 				<li>
 					<a href="intro.html" class="navLink">INTRO</a>
@@ -63,11 +64,22 @@
 			</div>
 		</main>
 	</div>
+<!-- 	<script>
+		$(function() {
+		    $('.navToggle'+','+'.navBack').click(function() {
+		        $(this).toggleClass('active');
+		 
+		        if ($(this).hasClass('active')) {
+		            $('.globalNav').addClass('active');
+		            $('.navBack').addClass('active');
+		        } else {
+		            $('.globalNav').removeClass('active');
+		            $('.navBack').removeClass('active');
+		        }
+		    });
+		});
+	</script> -->
 
 </body>
-
-	<!-- Clipboard.js -->
-	<script src="/src/js/plugin/clipboard.min.js"></script>
-	<script type="text/javascript" src="/assets/js/copy.js"></script>
-	<!-- /Clipboard.js -->
+<script type="text/javascript" src="/assets/js/bundle.js"></script>
 </html>

@@ -1,3 +1,168 @@
-.sample {
-	@include fz(24);
+body {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#mainContWrap {
+	@include box-sizing(border-box);
+
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: mgn(0);
+	background-color: $color12;
+
+	// ナビゲーションエリア
+	.navToggle {
+	    display: block;
+	    position: fixed;    /* bodyに対しての絶対位置指定 */
+	    right: 13px;
+	    top: 12px;
+	    width: 42px;
+	    height: 51px;
+	    cursor: pointer;
+	    z-index: 3;
+	    text-align: center;
+
+		span {
+		    display: block;
+		    position: absolute;    /* .navToggleに対して */
+		    width: 30px;
+		    border-bottom: solid 3px #eee;
+		    -webkit-transition: .35s ease-in-out;
+		    -moz-transition: .35s ease-in-out;
+		    transition: .35s ease-in-out;
+		    left: 6px;
+
+			&:nth-child(1) {
+			    top: 9px;
+			}
+			&:nth-child(2) {
+			    top: 18px;
+			}
+			&:nth-child(3) {
+			    top: 27px;
+			}
+		}
+
+		&.active span:nth-child(1),
+	    &.active span:nth-child(2),
+		&.active span:nth-child(3) {
+			opacity: 0;
+		}
+	}
+
+	nav.globalNav {
+		@include box-sizing(boder-box);
+
+		position: fixed;
+	    z-index: 2;
+	    top: 0;
+	    left: 0;
+	    color: #000;
+	    text-align: center;
+	    transform: translateY(-100%);
+	    transition: all 0.6s;
+	    width: 100%;
+		text-align: right;
+
+		.navInner {
+			@include setElem(after, "");
+
+			top: 0;
+			z-index: 1;
+			padding: mgn(0);
+			list-style-type: none;
+
+			li {
+				line-height: 1.6;
+				letter-spacing: 3px;
+
+				a {
+					@include fz(26);
+
+					color: $color01;
+					font-family: 'Merriweather', serif;
+					font-weight: 700;
+				}
+			}
+
+			&:after {
+				top: 0;
+				right: 0;
+				z-index: -1;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 280px 380px 0;
+				border-color: transparent $color07 transparent transparent;
+			}
+		}
+
+		/* このクラスを、jQueryで付与・削除する */
+		&.active {
+		    transform: translateY(0%);
+		}
+	}
+
+	.navBack {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        height: 100vh;
+        background: rgba($color02, 0.8);
+	}
+
+
+	/* メイン要素 */
+	main {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 48px);
+		margin: 0 auto;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+
+	.welcomeBlock {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+
+		.welcomeTxt {
+			text-align: center;
+		}
+	}
+
+	.notification {
+	  position: fixed;
+	  left: 0;
+	  right: 0;
+	  bottom: 20%;
+	  margin: 0 auto;
+	  text-align: center;
+	  opacity: 0;
+	  visibility: hidden;
+	  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s ease 0.4s;
+	}
+	.notification p {
+	  display: inline-block;
+	  padding: 4px 8px;
+	  color: #fff;
+	  background: rgba(153, 153, 153, 0.5);
+	  border-radius: 4px;
+	}
+	.notification.active {
+	  opacity: 1;
+	  visibility: visible;
+	  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
+	}
 }

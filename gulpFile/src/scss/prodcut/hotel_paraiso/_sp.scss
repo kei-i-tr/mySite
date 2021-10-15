@@ -17,24 +17,21 @@ body {
 	// ナビゲーションエリア
 	.navToggle {
 	    display: block;
-	    position: fixed;    /* bodyに対しての絶対位置指定 */
-	    right: 13px;
-	    top: 12px;
 	    width: 42px;
 	    height: 51px;
 	    cursor: pointer;
-	    z-index: 3;
+	    z-index: 9999;
 	    text-align: center;
+	    margin: 40px -8px 0 auto;
 
 		span {
 		    display: block;
-		    position: absolute;    /* .navToggleに対して */
+		    position: relative;    /* .navToggleに対して */
 		    width: 30px;
 		    border-bottom: solid 3px #eee;
 		    -webkit-transition: .35s ease-in-out;
 		    -moz-transition: .35s ease-in-out;
 		    transition: .35s ease-in-out;
-		    left: 6px;
 
 			&:nth-child(1) {
 			    top: 9px;
@@ -47,10 +44,20 @@ body {
 			}
 		}
 
-		&.active span:nth-child(1),
-	    &.active span:nth-child(2),
-		&.active span:nth-child(3) {
-			opacity: 0;
+		&.open {
+			transform: translateY(0%);
+		}
+
+		&.open span:nth-child(1) {
+			top: 24px;
+			transform: rotate(45deg);
+		}
+	    &.open span:nth-child(2) {
+	    	opacity: 0;
+	    }
+		&.open span:nth-child(3) {
+			top: 18px;
+			transform: rotate(-45deg);
 		}
 	}
 
@@ -63,7 +70,7 @@ body {
 	    left: 0;
 	    color: #000;
 	    text-align: center;
-	    transform: translateY(-100%);
+	    transform: translateY(-77%);
 	    transition: all 0.6s;
 	    width: 100%;
 		text-align: right;
@@ -103,7 +110,7 @@ body {
 
 		/* このクラスを、jQueryで付与・削除する */
 		&.active {
-		    transform: translateY(0%);
+		    // transform: translateY(0%);
 		}
 	}
 

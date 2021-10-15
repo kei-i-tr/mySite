@@ -8,8 +8,9 @@ export class navToggle {
         let t = this;
 
         t.trigger = '.js-trigger';
-        t.target = '.js-target';
+        t.targetNav = '.js-targetNav';
         t.targetBack = '.js-back';
+        t.trigerFlg = false;
     }
 
     init() {
@@ -20,16 +21,20 @@ export class navToggle {
     	// 	t.showNav();
     	// });
 
-    	$(t.trigger + ',' + t.targetBack).on('click', function() {
+    	$(t.targetBack + ',' + t.targetNav).on('click', function() {
 
-            if($('active').length){
-                console.log('aaa');
+            console.log(t.trig);
+
+            if(t.trigerFlg){
+                console.log('hide');
         		t.hideBg();
         		t.hideNav();
+                t.trigerFlg = false;
             } else {
-                console.log('bbb');
+                console.log('show');
                 t.showBg();
                 t.showNav();
+                t.trigerFlg = true;
             }
     	});
     }
@@ -51,7 +56,7 @@ export class navToggle {
             }
         });
 
-        console.log('show');
+        console.log('showBg');
     }
     /**
      * 背景の半透明黒背景を非表示
@@ -72,10 +77,20 @@ export class navToggle {
      * ナビゲーションを表示
      */
     showNav() {
-    	let t = $(this)
-        console.log('add');
+    	let t = this;
+        console.log(t.targetNav);
 
-    	$(t.target).addClass('active');
+    	$(t.targetNav).addClass('active');
+        $(t.targetNav).velocity('stop').velocity({
+          translateY: '0%'
+        }, {
+          easing: [1000, 20],
+          duration: 300
+        });
+
+        $(t.trigger).addClass('open');
+
+        console.log('addComp');
     }
 
 
@@ -83,9 +98,17 @@ export class navToggle {
      * ナビゲーションを非表示
      */
     hideNav() {
-    	let t = $(this)
+    	let t = this;
 
-    	$(t.target).removeClass('active');
+    	$(t.targetNav).removeClass('active');
+        $(t.targetNav).velocity('stop').velocity({
+            translateY: '-77%'
+        }, {
+          easing: [1000, 20],
+          duration: 300
+        });
+
+        $(t.trigger).removeClass('open');
     }
 };
 

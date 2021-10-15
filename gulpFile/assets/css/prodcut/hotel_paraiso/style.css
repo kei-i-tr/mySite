@@ -219,19 +219,15 @@ a:hover {
     cursor: pointer;
     display: block;
     height: 51px;
-    position: fixed;
-    /* bodyに対しての絶対位置指定 */
-    right: 13px;
+    margin: 40px -8px 0 auto;
     text-align: center;
-    top: 12px;
     width: 42px;
-    z-index: 3;
+    z-index: 9999;
   }
   #mainContWrap .navToggle span {
     border-bottom: solid 3px #eee;
     display: block;
-    left: 6px;
-    position: absolute;
+    position: relative;
     transition: 0.35s ease-in-out;
     /* .navToggleに対して */
     width: 30px;
@@ -245,8 +241,19 @@ a:hover {
   #mainContWrap .navToggle span:nth-child(3) {
     top: 27px;
   }
-  #mainContWrap .navToggle.active span:nth-child(1), #mainContWrap .navToggle.active span:nth-child(2), #mainContWrap .navToggle.active span:nth-child(3) {
+  #mainContWrap .navToggle.open {
+    transform: translateY(0%);
+  }
+  #mainContWrap .navToggle.open span:nth-child(1) {
+    top: 24px;
+    transform: rotate(45deg);
+  }
+  #mainContWrap .navToggle.open span:nth-child(2) {
     opacity: 0;
+  }
+  #mainContWrap .navToggle.open span:nth-child(3) {
+    top: 18px;
+    transform: rotate(-45deg);
   }
   #mainContWrap nav.globalNav {
     box-sizing: boder-box;
@@ -256,7 +263,7 @@ a:hover {
     text-align: center;
     text-align: right;
     top: 0;
-    transform: translateY(-100%);
+    transform: translateY(-77%);
     transition: all 0.6s;
     width: 100%;
     z-index: 2;
@@ -294,9 +301,6 @@ a:hover {
     top: 0;
     width: 0;
     z-index: -1;
-  }
-  #mainContWrap nav.globalNav.active {
-    transform: translateY(0%);
   }
   #mainContWrap .navBack {
     background: rgba(0, 0, 0, 0.8);

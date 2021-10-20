@@ -80,6 +80,92 @@ body {
 		}
 	}
 
+	/* 見出し */
+	main h1:first-child {
+		margin-top: 0!important;
+	}
+
+	p {
+		margin-bottom: mgn(-1);
+	}
+
+	.hdType01 {
+		@include fz(28);
+
+		display: inline-block;
+		position: relative;
+		top:0;
+		line-height: 1.2;
+		padding: 0.2em 1em;
+		margin: mgn(1) 0;
+		font-family: $SawarabiFont;
+
+		&:before, &:after {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			content:"";
+			width: 8px;
+			height: 100%;
+		}
+		&:before {
+			border-left: solid 1px black;
+			border-top: solid 1px black;
+			border-bottom: solid 1px black;
+			left: 0;
+		}
+		&:after {
+		  content:"";
+		  border-top: solid 1px black;
+		  border-right: solid 1px black;
+		  border-bottom: solid 1px black;
+		  right: 0;
+		}
+
+		&:first-letter {
+			font-size: 2em;
+			color: $color07;
+			letter-spacing: 0.05em;
+		}
+	}
+
+	.hdType02 {
+		@include setElem(after, "");
+		@include fz(26);
+
+		display: inline-block;
+		border-bottom: solid 3px $color08;
+		margin: mgn(1) 0 mgn(0);
+		padding-right: 200px;
+		font-family: $SawarabiFont;
+
+		&:after {
+			border-bottom: solid 3px $color07;
+			bottom: -3px;
+			width: 20%;
+		}
+	}
+
+	.hdType03 {
+		@include setElem(after, "");
+		@include fz(20);
+
+		display: inline-block;
+		background: $color09;
+		padding: mgn(-1) mgn(0);
+		margin: mgn(1) 0 mgn(1);
+		font-family: $SawarabiFont;
+
+		&:after {
+			top: 100%;
+			left: 30px;
+			border: 15px solid transparent;
+			border-top: 15px solid $color09;
+			width: 0;
+			height: 0;
+		}
+	}
+
 	/* コピーエリア */
 	.targetWrap {
 		position: relative;

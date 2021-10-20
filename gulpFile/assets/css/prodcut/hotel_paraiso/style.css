@@ -77,6 +77,7 @@ a:hover {
     position: relative;
     width: 1024px;
     /* メイン要素 */
+    /* 見出し */
     /* コピーエリア */
     /* clipbord関連 */
   }
@@ -137,6 +138,92 @@ a:hover {
   }
   #mainContWrap .welcomeBlock .welcomeTxt {
     text-align: center;
+  }
+  #mainContWrap main h1:first-child {
+    margin-top: 0 !important;
+  }
+  #mainContWrap p {
+    margin-bottom: 8px;
+  }
+  #mainContWrap .hdType01 {
+    display: inline-block;
+    font-family: "Sawarabi Mincho", sans-serif;
+    font-size: 28px;
+    font-size: 28/nounit(16px)rem;
+    line-height: 1.2;
+    margin: 24px 0;
+    padding: 0.2em 1em;
+    position: relative;
+    top: 0;
+  }
+  #mainContWrap .hdType01:before, #mainContWrap .hdType01:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 8px;
+  }
+  #mainContWrap .hdType01:before {
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    border-top: solid 1px black;
+    left: 0;
+  }
+  #mainContWrap .hdType01:after {
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+    border-top: solid 1px black;
+    content: "";
+    right: 0;
+  }
+  #mainContWrap .hdType01:first-letter {
+    color: #4B5F65;
+    font-size: 2em;
+    letter-spacing: 0.05em;
+  }
+  #mainContWrap .hdType02 {
+    border-bottom: solid 3px #BBBECA;
+    display: inline-block;
+    font-family: "Sawarabi Mincho", sans-serif;
+    font-size: 26px;
+    font-size: 26/nounit(16px)rem;
+    margin: 24px 0 16px;
+    padding-right: 200px;
+    position: relative;
+  }
+  #mainContWrap .hdType02:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  #mainContWrap .hdType02:after {
+    border-bottom: solid 3px #4B5F65;
+    bottom: -3px;
+    width: 20%;
+  }
+  #mainContWrap .hdType03 {
+    background: #B7C6C7;
+    display: inline-block;
+    font-family: "Sawarabi Mincho", sans-serif;
+    font-size: 20px;
+    font-size: 20/nounit(16px)rem;
+    margin: 24px 0 24px;
+    padding: 8px 16px;
+    position: relative;
+  }
+  #mainContWrap .hdType03:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  #mainContWrap .hdType03:after {
+    border: 15px solid transparent;
+    border-top: 15px solid #B7C6C7;
+    height: 0;
+    left: 30px;
+    top: 100%;
+    width: 0;
   }
   #mainContWrap .targetWrap {
     margin-left: 16px;
